@@ -10,7 +10,7 @@
 <meta name="keywords" content="audio player, media player, video player, html5 video, html5 audio, responsive video" />
 <meta name="author" content="Dwight Vietzke" />
 
-    <title>HTML5 Video</title>
+    <title>Streaming Video</title>
 
 <style type="text/css">
 /* <![CDATA[ */
@@ -81,20 +81,16 @@
 	<h2><u>MediaElementPlayer.js</u></h2>
 
 	<div class="pgrph">
-		This page demo's the MobileSiteOS version of <u>MediaElementPlayer</u>.
+		This page demo's the MobileSiteOS version of <u>MediaElementPlayer</u> for playing streaming (rtmp://) videos.
 	</div>
 
-	<video id="player1" width="640" height="360" poster="./mobilesiteos/media/echo-hereweare.jpg" controls="controls" preload="none">
-		<source src="./mobilesiteos/media/echo-hereweare.webm"	type='video/webm; codecs="vp8, vorbis"' />
-		<source src="./mobilesiteos/media/echo-hereweare.mp4"	type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
-		<source src="./mobilesiteos/media/echo-hereweare.ogv"	type='video/ogg; codecs="theora, vorbis"' />
-		<track  src="./mobilesiteos/media/mediaelement.srt"		label="English subtitles" kind="subtitles" srclang="en" default />
-		<script src="./postroll.html" type="text/postroll"></script>
+	<video id="player1" width="640" height="360" preload="auto" autoplay="true">
+        <source src="rtmp://fms.12E5.edgecastcdn.net/0012E5/mp4:videos/8Juv1MVa-485.mp4" type='video/rtmp; codecs="rtmp"'>
 		<p>Our website does not support video playback for your current browser!</p>
-	</video>
+    </video>
 
 	<h3 id="player1-mode"></h3>
-	
+
 	<input type="button" id="pause_play" value="Pause Play" style="margin-bottom: 1em;" />
 
 	<div id='social_ties'></div>
