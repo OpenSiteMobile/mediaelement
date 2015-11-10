@@ -1,6 +1,6 @@
 // Copyright Notice:
 //					config.js
-//			Copyright©2012-2014 - OpenSiteMobile
+//			Copyright©2012-2015 - OpenSiteMobile
 //				All rights reserved
 // ==========================================================================
 //			http://opensite.mobi
@@ -39,17 +39,23 @@ msos.config.run_social = true;
 if (msos.config.debug_css) {
 	
 	msos.deferred_css = [
-		msos.resource_url('css', 'normalize.css'),
-		msos.resource_url('css', 'fawe.css'),
+		msos.resource_url('css', 'normalize.uc.css'),
+		msos.resource_url('css', 'font_awesome.uc.css'),
 		msos.resource_url('css', 'msos.css'),
 		msos.resource_url('css', 'msos_bs.css'),
-		msos.resource_url('css', 'msos_theme.css')
+		msos.resource_url('css', 'msos_theme.css'),
+		msos.resource_url('apps', 'mediaelement/css/base.css')
 	];
 
 } else {
 
 	msos.deferred_css = [
-		msos.resource_url('css', 'bundle.min.css')
+		msos.resource_url('css', 'normalize.min.css'),
+		msos.resource_url('css', 'font_awesome.min.css'),
+		msos.resource_url('css', 'msos.css'),
+		msos.resource_url('css', 'msos_bs.css'),
+		msos.resource_url('css', 'msos_theme.css'),
+		msos.resource_url('apps', 'mediaelement/css/base.css')
 	];
 
 }
@@ -67,7 +73,7 @@ if (msos.config.debug_script) {
 		msos.resource_url('jquery', 'ui/v1114.uc.js'),		// All UI Core + Draggable Interaction + Effects Core
 		msos.resource_url('hammer', 'v203.uc.js'),			// jQuery.hammer.js version of Hammer.js
 		msos.resource_url('backbone', 'v120.uc.js'),
-		msos.resource_url('','site.js'),					// Common installation specific setup code (which needs jQuery, underscore.js, etc.)
+		msos.resource_url('..', 'mobilesiteos/site.js'),
 		msos.resource_url('msos', 'core.uc.js')
 	];
 
@@ -79,7 +85,7 @@ if (msos.config.debug_script) {
 		msos.resource_url('jquery', 'ui/v1114.min.js'),		// All UI Core + Draggable Interaction + Effects Core
 		msos.resource_url('hammer', 'v203.min.js'),			// jQuery.hammer.js version of Hammer.js
 		msos.resource_url('backbone', 'v120.min.js'),
-		msos.resource_url('','site.js'),
+		msos.resource_url('..', 'mobilesiteos/site.js'),
 		msos.resource_url('msos', 'core.min.js')
 	];
 }
@@ -111,7 +117,7 @@ msos.config.google.analytics_domain = 'opensitemobile.com';
 // Add your Google Web Page Translator Widget ID here.
 msos.config.google.translate_id = '7aa52b36fcd8fcb6-07fbdbdc6a976e62-g7261f6c2de6e277c-d';
 msos.config.google.no_translate = {
-	by_id: ['#rotate_marquee', '#header', '#footer', '#pyromane', '#locale', '#culture', '#calendar'],
+	by_id: ['#marquee', '#header', '#footer', '#pyromane', '#locale', '#culture', '#calendar'],
 	by_class: [],
 	by_tag: ['code', 'u']
 };
