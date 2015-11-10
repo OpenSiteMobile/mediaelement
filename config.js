@@ -73,7 +73,7 @@ if (msos.config.debug_script) {
 		msos.resource_url('jquery', 'ui/v1114.uc.js'),		// All UI Core + Draggable Interaction + Effects Core
 		msos.resource_url('hammer', 'v203.uc.js'),			// jQuery.hammer.js version of Hammer.js
 		msos.resource_url('backbone', 'v120.uc.js'),
-		msos.resource_url('..','site.js'),					// Common installation specific setup code (which needs jQuery, underscore.js, etc.)
+		msos.resource_url('..', 'mobilesiteos/site.js'),
 		msos.resource_url('msos', 'core.uc.js')
 	];
 
@@ -85,7 +85,7 @@ if (msos.config.debug_script) {
 		msos.resource_url('jquery', 'ui/v1114.min.js'),		// All UI Core + Draggable Interaction + Effects Core
 		msos.resource_url('hammer', 'v203.min.js'),			// jQuery.hammer.js version of Hammer.js
 		msos.resource_url('backbone', 'v120.min.js'),
-		msos.resource_url('..','site.js'),
+		msos.resource_url('..', 'mobilesiteos/site.js'),
 		msos.resource_url('msos', 'core.min.js')
 	];
 }
