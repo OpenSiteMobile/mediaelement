@@ -23,13 +23,17 @@
 msos.console.info('config -> start, (/mediaelement/config.js file).');
 msos.console.time('config');
 
-// Set specific flags for this configuration:
-msos.config.run_ads = true;
-msos.config.run_size = true;
-msos.config.run_analytics = true;
-//msos.config.run_onerror = true;
-msos.config.run_social = true;
-//msos.config.run_translate = true;
+// Set specific config flags (w/ boolean)
+msos.site_specific({
+	run_ads: true,
+	run_size: true,
+	run_social: true
+	
+});
+
+if (msos.config.verbose) {
+	msos.console.debug('config -> initial:', msos.config);
+}
 
 
 // --------------------------
@@ -37,13 +41,14 @@ msos.config.run_social = true;
 // --------------------------
 
 if (msos.config.debug_css) {
-	
+
 	msos.deferred_css = [
 		msos.resource_url('css', 'normalize.uc.css'),
 		msos.resource_url('css', 'font_awesome.uc.css'),
 		msos.resource_url('css', 'msos.css'),
 		msos.resource_url('css', 'msos_bs.css'),
 		msos.resource_url('css', 'msos_theme.css'),
+		msos.resource_url('demo', 'css/base.css'),
 		msos.resource_url('apps', 'mediaelement/css/base.css')
 	];
 
@@ -55,6 +60,7 @@ if (msos.config.debug_css) {
 		msos.resource_url('css', 'msos.css'),
 		msos.resource_url('css', 'msos_bs.css'),
 		msos.resource_url('css', 'msos_theme.css'),
+		msos.resource_url('demo', 'css/base.css'),
 		msos.resource_url('apps', 'mediaelement/css/base.css')
 	];
 
@@ -73,7 +79,7 @@ if (msos.config.debug_script) {
 		msos.resource_url('jquery', 'ui/v1114.uc.js'),		// All UI Core + Draggable Interaction + Effects Core
 		msos.resource_url('hammer', 'v203.uc.js'),			// jQuery.hammer.js version of Hammer.js
 		msos.resource_url('backbone', 'v120.uc.js'),
-		msos.resource_url('..', 'mobilesiteos/site.js'),
+		msos.resource_url('', 'site.js'),
 		msos.resource_url('msos', 'core.uc.js')
 	];
 
@@ -85,7 +91,7 @@ if (msos.config.debug_script) {
 		msos.resource_url('jquery', 'ui/v1114.min.js'),		// All UI Core + Draggable Interaction + Effects Core
 		msos.resource_url('hammer', 'v203.min.js'),			// jQuery.hammer.js version of Hammer.js
 		msos.resource_url('backbone', 'v120.min.js'),
-		msos.resource_url('..', 'mobilesiteos/site.js'),
+		msos.resource_url('', 'site.js'),
 		msos.resource_url('msos', 'core.min.js')
 	];
 }
