@@ -1,6 +1,6 @@
 // Copyright Notice:
 //					config.js
-//			Copyright©2012-2015 - OpenSiteMobile
+//			Copyright©2012-2017 - OpenSiteMobile
 //				All rights reserved
 // ==========================================================================
 //			http://opensite.mobi
@@ -16,8 +16,7 @@
 /*global
 	msos: false,
     _gaq: true,
-    ___gcfg: true,
-    addthis_config: true
+    ___gcfg: true
 */
 
 msos.console.info('config -> start, (/mediaelement/config.js file).');
@@ -26,9 +25,7 @@ msos.console.time('config');
 // Set specific config flags (w/ boolean)
 msos.site_specific({
 	run_ads: true,
-	run_size: true,
-	run_social: true
-	
+	run_size: true
 });
 
 if (msos.config.verbose) {
@@ -43,8 +40,8 @@ if (msos.config.verbose) {
 if (msos.config.debug_css) {
 
 	msos.deferred_css = [
+		msos.resource_url('fonts', 'css/fontawesome.uc.css'),
 		msos.resource_url('css', 'normalize.uc.css'),
-		msos.resource_url('css', 'font_awesome.uc.css'),
 		msos.resource_url('css', 'msos.css'),
 		msos.resource_url('css', 'msos_bs.css'),
 		msos.resource_url('css', 'msos_theme.css'),
@@ -55,8 +52,8 @@ if (msos.config.debug_css) {
 } else {
 
 	msos.deferred_css = [
+		msos.resource_url('fonts', 'css/fontawesome.min.css'),
 		msos.resource_url('css', 'normalize.min.css'),
-		msos.resource_url('css', 'font_awesome.min.css'),
 		msos.resource_url('css', 'msos.css'),
 		msos.resource_url('css', 'msos_bs.css'),
 		msos.resource_url('css', 'msos_theme.css'),
@@ -75,24 +72,24 @@ if (msos.config.debug_script) {
 
 	// Debug full scripts (line no's mean something)
 	msos.deferred_scripts = [
-		msos.resource_url('jquery', 'v214.uc.js'),
-		msos.resource_url('jquery', 'ui/v1114.uc.js'),		// All UI Core + Draggable Interaction + Effects Core
+		msos.resource_url('jquery', 'v311_msos.uc.js'),
+		msos.resource_url('jquery', 'ui/v1120.uc.js'),		// All UI Core + Draggable Interaction + Effects Core
 		msos.resource_url('hammer', 'v204.uc.js'),			// jQuery.hammer.js version of Hammer.js
 		msos.resource_url('backbone', 'v123.uc.js'),
 		msos.resource_url('', 'site.js'),
-		msos.resource_url('msos', 'core.uc.js')
+		msos.resource_url('msos', 'v1746.uc.js')
 	];
 
 } else {
 
 	// Standard site provided (including ext. bundles) scripts
 	msos.deferred_scripts = [
-		msos.resource_url('jquery', 'v214.min.js'),
-		msos.resource_url('jquery', 'ui/v1114.min.js'),		// All UI Core + Draggable Interaction + Effects Core
+		msos.resource_url('jquery', 'v311_msos.min.js'),
+		msos.resource_url('jquery', 'ui/v1120.min.js'),		// All UI Core + Draggable Interaction + Effects Core
 		msos.resource_url('hammer', 'v204.min.js'),			// jQuery.hammer.js version of Hammer.js
 		msos.resource_url('backbone', 'v123.min.js'),
 		msos.resource_url('', 'site.js'),
-		msos.resource_url('msos', 'core.min.js')
+		msos.resource_url('msos', 'v1746.min.js')
 	];
 }
 
@@ -103,16 +100,7 @@ if (msos.config.debug_script) {
 
 // Replace with your site specific Google and other variables
 var _gaq = [],
-    ___gcfg = {},
-	addthis_config = {							// AddThis (addthis.com) configuration object
-		username: 'MobileSiteOS',
-		data_ga_property: 'UA-24170958-1',
-		ui_language: msos.default_locale,
-		ui_click: true
-	};
-
-// AddThis Social Sharing
-msos.config.addthis_pubid = 'ra-515ca32f73d2b2ae';
+    ___gcfg = {};
 
 // Google Analytics
 _gaq.push(['_setAccount', 'UA-24170958-1']);
@@ -142,6 +130,8 @@ msos.config.social = {
 	foursquare: 'SFYWHRQ1LTUJEQWYQMHOCXYWNFNS0MKUCAGANTHLFUGJX02E'
 };
 
+// Add your Google Maps API key here.
+msos.config.google.maps_api_key = 'AIzaSyAhvG_5h55iUW3fLREMTPxB6joCAexYQ2o';
 
 msos.css_loader(msos.deferred_css);
 msos.script_loader(msos.deferred_scripts);
