@@ -23,3 +23,5 @@ different display sizes, similar to the way the FitImage (https://github.com/kpo
 script does for images presented in a responsive web design website.
 
 Our demo can be run from http://opensitemobile.com/mediaelement/
+
+Note: This demo is incomplete due to changes in Google's Youtube API and other software changes.
